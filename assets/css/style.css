@@ -2,13 +2,23 @@ body {
     font-family: sans-serif;
 }
 
-header {
-    text-align: center;
+.header {
+    display: flex;
+    justify-content: center;
     background-image: linear-gradient(darkblue, blue);
-    padding: 3px;
+    padding: 5px;
     color: white;
 }
 
-.form {
+.form-container {
     border: 3px solid black;
 }
+
+.results-container {
+    border: 3px solid black;
+}
+
+.results-container h2 {
+    text-align: center;
+}
+

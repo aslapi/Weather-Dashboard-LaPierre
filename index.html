@@ -9,21 +9,42 @@
     <script src="./assets/js/script.js"></script>
 </head>
 <body>
-    <header>
+    <div class="header">
         <h1>Weather Dashboard</h1>
-    </header>
-    <aside class="form col-lg-3">
-        <h2>Search for a city:</h2>
-        <form>
-            <input id="search" type="text" placeholder="Minneapolis">
-        </br>
-            <input id="submit" class="submit" type="submit">
-        </form>
-    </aside>
-    <main class="col-lg-9">
-        <h2>
-            City Search Results
-        </h2>
-    </main>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-4 form-container">
+            <h2>Search for a city:</h2>
+            <form>
+                <input id="search" type="text" placeholder="Minneapolis">
+            </br>
+                <input id="submit" class="submit" type="submit">
+            </form>
+            <h2>Previously Searched:</h2>
+            <div id="recent-search">
+                <p>Some text</p>
+                <!-- Use ID in JS to append to?? -->
+                <!-- Check in-class activity that saved login information to the page -->
+            </div>
+            <div>
+                <p>Some text</p>
+            </div>
+            <div>
+                <p>Some text</p>
+            </div>
+            <div>
+                <p>Some text</p>
+            </div>
+            <div>
+                <p>Some text</p>
+            </div>
+        </div>
+        <div class="col-12 col-lg-8 results-container">
+            <h2>City Search Results</h2>
+            <div id="search-results">
+                <!-- Use ID in JS to append to?? -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
