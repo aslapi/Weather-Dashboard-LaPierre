@@ -16,33 +16,92 @@
         <div class="col-12 col-lg-4 form-container">
             <h2>Search for a city:</h2>
             <form>
-                <input id="search" type="text" placeholder="Minneapolis">
+                <input class="col-12" id="search" type="text" placeholder="Minneapolis">
             </br>
-                <input id="submit" class="submit" type="submit">
+                <input id="submit" class="submit col-12" type="submit">
             </form>
             <h2>Previously Searched:</h2>
             <div id="recent-search">
-                <p>Some text</p>
+                <p>Search History</p>
                 <!-- Use ID in JS to append to?? -->
                 <!-- Check in-class activity that saved login information to the page -->
             </div>
             <div>
-                <p>Some text</p>
+                <p>Search History</p>
             </div>
             <div>
-                <p>Some text</p>
+                <p>Search History</p>
             </div>
             <div>
-                <p>Some text</p>
+                <p>Search History</p>
             </div>
             <div>
-                <p>Some text</p>
+                <p>Search History</p>
             </div>
         </div>
         <div class="col-12 col-lg-8 results-container">
-            <h2>City Search Results</h2>
-            <div id="search-results">
-                <!-- Use ID in JS to append to?? -->
+            <div class="row">
+                <div>
+                    <h2>City Search Results</h2>
+                    <div class="box">
+                        <!-- search-results ID in JS to insert the city searched -->
+                        <h3 id="search-results">Minneapolis</h3>
+                        <!-- Use ID in JS to append to?? -->
+                        <!-- I think need separate ID for each section here -->
+                        <p id="temp">Temp:</p>
+                    </br>
+                        <p id="wind">Wind:</p>
+                    </br>
+                        <p id="humidity">Humidity:</p>
+                    </div>
+                    <div>
+                        <h3>5 Day Forecast</h3>
+                    </div>
+                    <!-- GET THIS TO SPACE EVENLY???? IDK WHAT THE THING IS FOR JUSTIFY CONTENT -->
+                    <div class="row">
+                        <!-- Might just be using one of these divs and appending them from JS with the API information -->
+                        <div class="col-lg-2 box">
+                            <p>Date</p>
+                            <!-- <i> tag?? from fontawesome?? -->
+                            <p>Icon</p>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </div>
+                        <div class="col-lg-2 box">
+                            <p>Date</p>
+                            <!-- <i> tag?? from fontawesome?? -->
+                            <p>Icon</p>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </div>
+                        <div class="col-lg-2 box">
+                            <p>Date</p>
+                            <!-- <i> tag?? from fontawesome?? -->
+                            <p>Icon</p>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </div>
+                        <div class="col-lg-2 box">
+                            <p>Date</p>
+                            <!-- <i> tag?? from fontawesome?? -->
+                            <p>Icon</p>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </div>
+                        <div class="col-lg-2 box">
+                            <p>Date</p>
+                            <!-- <i> tag?? from fontawesome?? -->
+                            <p>Icon</p>
+                            <p>Temp:</p>
+                            <p>Wind:</p>
+                            <p>Humidity:</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

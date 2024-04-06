@@ -14,11 +14,30 @@ body {
     border: 3px solid black;
 }
 
+.form-container h2 {
+    text-decoration: underline blue;
+    text-align: center;
+}
+
+.submit {
+    margin-top: 3px;
+}
+
 .results-container {
     border: 3px solid black;
 }
 
 .results-container h2 {
     text-align: center;
+    text-decoration: underline blue;
+}
+
+.box {
+    border: 2px solid black;
+    margin: 5px;
+}
+
+.row {
+    justify-content: space-evenly;
 }
 
