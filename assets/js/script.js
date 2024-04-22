@@ -14,7 +14,8 @@ let searchedCity = JSON.parse(localStorage.getItem("searchHistory")) || [];
 function getApi(e) {
     e.preventDefault();
     // const citySearch = "Minneapolis";
-    const citySearch = document.getElementById('search').value;
+    const cityInput = document.getElementById('search');
+    const citySearch = cityInput.value;
 
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}&units=imperial`;
     let cityHeaderEl = document.getElementById('search-results');
@@ -40,13 +41,16 @@ function getApi(e) {
             humidityEl.textContent = `${data.main.humidity}%`;
             searchedCity.unshift(data.name);
             localStorage.setItem("searchHistory", JSON.stringify(searchedCity));
+            loadHistory();
         });
 };
 
 // 5 Day Forecast
 function getApiForecast(e) {
     e.preventDefault();
-    const citySearch = document.getElementById('search').value;
+    const cityInput = document.getElementById('search');
+    const citySearch = cityInput.value;
+    // const citySearch = document.getElementById('search').value;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${citySearch}&appid=${apiKey}&units=imperial`;
     const oneDay = document.getElementById('oneDay');
     const twoDay = document.getElementById('twoDay');
@@ -107,6 +111,32 @@ function getApiForecast(e) {
             </div>
             `
         });
+    cityInput.value = ("")
+
+};
+
+// function loadHistory() {
+//     const recentSearch = document.getElementById('recent-search');
+//     recentSearch.empty();
+//     for (let search of searchedCity) {
+//         const searchList = document.createElement('div');
+//         searchList.textContent = (search);
+//         searchList.appendTo(recentSearch);
+//     }
+// }
+
+function loadHistory() {
+    const recentSearch = document.getElementById('recent-search');
+    recentSearch.innerHTML = "";
+    searchedCity.forEach(search => {
+        const searchList = document.createElement('div');
+        searchList.textContent = search;
+        recentSearch.appendChild(searchList);
+    });
+}
+
+window.onload = function() {
+    loadHistory();
 };
 
 searchBtn.addEventListener('click', getApi);
