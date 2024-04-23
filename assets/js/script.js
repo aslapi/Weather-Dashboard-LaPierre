@@ -68,6 +68,7 @@ function getApiForecast(e) {
             console.log("data getApiForecast", data);
             oneDay.innerHTML = `
             <div>
+                Date: ${data.list[2].date}
                 Temperature: ${data.list[2].main.temp}°F
                 </br>
                 Wind: ${data.list[2].wind.speed}MPH
@@ -115,29 +116,31 @@ function getApiForecast(e) {
 
 };
 
+// Alternative way to write for loop
 // function loadHistory() {
 //     const recentSearch = document.getElementById('recent-search');
-//     recentSearch.empty();
-//     for (let search of searchedCity) {
+//     recentSearch.innerHTML = "";
+//     searchedCity.forEach(search => {
 //         const searchList = document.createElement('div');
-//         searchList.textContent = (search);
-//         searchList.appendTo(recentSearch);
-//     }
+//         searchList.textContent = search;
+//         recentSearch.appendChild(searchList);
+//     });
 // }
 
+// Appends search history to the aside div
 function loadHistory() {
     const recentSearch = document.getElementById('recent-search');
     recentSearch.innerHTML = "";
-    searchedCity.forEach(search => {
+    for (search of searchedCity) {
         const searchList = document.createElement('div');
         searchList.textContent = search;
         recentSearch.appendChild(searchList);
-    });
+    }
 }
 
-window.onload = function() {
-    loadHistory();
-};
+// window.onload = function() {
+//     loadHistory();
+// };
 
 searchBtn.addEventListener('click', getApi);
 searchBtn.addEventListener('click', getApiForecast);
