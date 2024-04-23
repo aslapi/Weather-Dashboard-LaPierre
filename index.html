@@ -20,7 +20,7 @@
                 <button id="submit" class="btn btn-primary col-12 mt-2">Submit</button>
             </form>
             <h2>Previously Searched:</h2>
-            <div id="recent-search">
+            <div id="recent-search" class="search-history">
                 <!-- Use ID in JS to append to?? -->
                 <!-- Check in-class activity that saved login information to the page -->
             </div>
@@ -32,6 +32,7 @@
                     <div class="box">
                         <!-- search-results ID in JS to insert the city searched -->
                         <h3 id="search-results"></h3>
+                        <img id="weatherIcon" src="" alt="Weather Icon">
                         <h5  id="currentDate"></h5>
                         <!-- Use ID in JS to append to?? -->
                         <!-- I think need separate ID for each section here -->
@@ -51,33 +52,18 @@
                     <div class="row">
                         <!-- Might just be using one of these divs and appending them from JS with the API information -->
                         <div class="col-lg-2 box">
-                            <p>Date</p>
-                            <!-- <i> tag?? from fontawesome?? -->
-                            <p>Icon</p>
                             <p id="oneDay"></p>
                         </div>
                         <div class="col-lg-2 box">
-                            <p>Date</p>
-                            <!-- <i> tag?? from fontawesome?? -->
-                            <p>Icon</p>
                             <p id="twoDay"></p>
                         </div>
                         <div class="col-lg-2 box">
-                            <p>Date</p>
-                            <!-- <i> tag?? from fontawesome?? -->
-                            <p>Icon</p>
                             <p id="threeDay"></p>
                         </div>
                         <div class="col-lg-2 box">
-                            <p>Date</p>
-                            <!-- <i> tag?? from fontawesome?? -->
-                            <p>Icon</p>
                             <p id="fourDay"></p>
                         </div>
                         <div class="col-lg-2 box">
-                            <p>Date</p>
-                            <!-- <i> tag?? from fontawesome?? -->
-                            <p>Icon</p>
                             <p id="fiveDay"></p>
                         </div>
                     </div>

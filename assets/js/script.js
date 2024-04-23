@@ -19,6 +19,11 @@ function getApi(e) {
 
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}&units=imperial`;
     let cityHeaderEl = document.getElementById('search-results');
+    let weatherIconEl = document.getElementById('weatherIcon');
+    // const iconCode = "02n"
+    // const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
+    // console.log("did this work?", iconUrl);
+
     let tempEl = document.getElementById('temp');
     let windEl = document.getElementById('wind');
     let humidityEl = document.getElementById('humidity');
@@ -35,9 +40,10 @@ function getApi(e) {
         .then(function (data) {
             console.log("data getApi", data);
             cityHeaderEl.textContent = `${data.name}`;
+            weatherIconEl.src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
             currentDateEl.textContent = formattedDate;
             tempEl.textContent = `${data.main.temp}°F`;
-            windEl.textContent = `${data.wind.speed}MPH`;
+            windEl.textContent = `${data.wind.speed}mph`;
             humidityEl.textContent = `${data.main.humidity}%`;
             searchedCity.unshift(data.name);
             localStorage.setItem("searchHistory", JSON.stringify(searchedCity));
@@ -65,50 +71,56 @@ function getApiForecast(e) {
             return response.json();
         })
         .then(function (data) {
+            // Date: ${data.list[2].date}
             console.log("data getApiForecast", data);
             oneDay.innerHTML = `
             <div>
-                Date: ${data.list[2].date}
-                Temperature: ${data.list[2].main.temp}°F
+                <img src="https://openweathermap.org/img/w/${data.list[2].weather[0].icon}.png" alt="Weather Icon">
                 </br>
-                Wind: ${data.list[2].wind.speed}MPH
+                <b>Temperature:</b> ${data.list[2].main.temp}°F
                 </br>
-                Humidity: ${data.list[2].main.humidity}%
+                <b>Wind:</b> ${data.list[2].wind.speed}mph
+                </br>
+                <b>Humidity:</b> ${data.list[2].main.humidity}%
             </div>`
             twoDay.innerHTML = `
             <div>
-                Temperature: ${data.list[10].main.temp}°F
+                <img src="https://openweathermap.org/img/w/${data.list[10].weather[0].icon}.png" alt="Weather Icon">
+                <b>Temperature:</b> ${data.list[10].main.temp}°F
                 </br>
-                Wind: ${data.list[10].wind.speed}MPH
+                <b>Wind:</b> ${data.list[10].wind.speed}mph
                 </br>
-                Humidity: ${data.list[10].main.humidity}%
+                <b>Humidity:</b> ${data.list[10].main.humidity}%
             </div>
             `
             threeDay.innerHTML = `
             <div>
-                Temperature: ${data.list[18].main.temp}°F
+                <img src="https://openweathermap.org/img/w/${data.list[18].weather[0].icon}.png" alt="Weather Icon">
+                <b>Temperature:</b> ${data.list[18].main.temp}°F
                 </br>
-                Wind: ${data.list[18].wind.speed}MPH
+                <b>Wind:</b> ${data.list[18].wind.speed}mph
                 </br>
-                Humidity: ${data.list[18].main.humidity}%
+                <b>Humidity:</b> ${data.list[18].main.humidity}%
             </div>
             `
             fourDay.innerHTML = `
             <div>
-                Temperature: ${data.list[26].main.temp}°F
+                <img src="https://openweathermap.org/img/w/${data.list[26].weather[0].icon}.png" alt="Weather Icon">
+                <b>Temperature:</b> ${data.list[26].main.temp}°F
                 </br>
-                Wind: ${data.list[26].wind.speed}MPH
+                <b>Wind:</b> ${data.list[26].wind.speed}mph
                 </br>
-                Humidity: ${data.list[26].main.humidity}%
+                <b>Humidity:</b> ${data.list[26].main.humidity}%
             </div>
             `
             fiveDay.innerHTML = `
             <div>
-                Temperature: ${data.list[34].main.temp}°F
+                <img src="https://openweathermap.org/img/w/${data.list[34].weather[0].icon}.png" alt="Weather Icon">
+                <b>Temperature:</b> ${data.list[34].main.temp}°F
                 </br>
-                Wind: ${data.list[34].wind.speed}MPH
+                <b>Wind:</b> ${data.list[34].wind.speed}mph
                 </br>
-                Humidity: ${data.list[34].main.humidity}%
+                <b>Humidity:</b> ${data.list[34].main.humidity}%
             </div>
             `
         });
