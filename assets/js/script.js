@@ -2,12 +2,9 @@ const apiKey = "1fb76b664132170781b862620191215d";
 const searchBtn = document.getElementById('submit');
 let searchedCity = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
-
-
 // Current weather
 function getApi(e) {
     e.preventDefault();
-    // const citySearch = "Minneapolis";
     const cityInput = document.getElementById('search');
     const citySearch = cityInput.value;
 
@@ -21,7 +18,7 @@ function getApi(e) {
     const currentDate = dayjs();
     const formattedDate = currentDate.format('dddd, MMMM D, YYYY');
 
-
+    // Current weather fetch
     fetch(weatherUrl)
         .then(function (response) {
             console.log("response getApi", response);
@@ -53,17 +50,27 @@ function getApiForecast(e) {
     const fourDay = document.getElementById('fourDay');
     const fiveDay = document.getElementById('fiveDay');
 
+    // Displays next five days in 5 day forecast cards
+    const currentDate = dayjs();
+    const nextFive = [];
 
+    for (let i = 1; i <= 5; i++) {
+        const nextDay = currentDate.add(i, 'day');
+        nextFive.push(nextDay.format('MM/DD/YYYY'));
+    }
+
+    // 5 day forecast fetch
     fetch(weatherUrl)
         .then(function (response) {
             console.log("response getApiForecast", response);
             return response.json();
         })
         .then(function (data) {
-            // Date: ${data.list[2].date}
             console.log("data getApiForecast", data);
+            // Five day forecast HTML created
             oneDay.innerHTML = `
             <div>
+                <h5> ${nextFive[0]}</h5>
                 <img src="https://openweathermap.org/img/w/${data.list[2].weather[0].icon}.png" alt="Weather Icon">
                 </br>
                 <b>Temperature:</b> ${data.list[2].main.temp}°F
@@ -74,6 +81,7 @@ function getApiForecast(e) {
             </div>`
             twoDay.innerHTML = `
             <div>
+                <h5> ${nextFive[1]}</h5>
                 <img src="https://openweathermap.org/img/w/${data.list[10].weather[0].icon}.png" alt="Weather Icon">
                 <b>Temperature:</b> ${data.list[10].main.temp}°F
                 </br>
@@ -84,6 +92,7 @@ function getApiForecast(e) {
             `
             threeDay.innerHTML = `
             <div>
+                <h5> ${nextFive[2]}</h5>   
                 <img src="https://openweathermap.org/img/w/${data.list[18].weather[0].icon}.png" alt="Weather Icon">
                 <b>Temperature:</b> ${data.list[18].main.temp}°F
                 </br>
@@ -94,6 +103,7 @@ function getApiForecast(e) {
             `
             fourDay.innerHTML = `
             <div>
+                <h5> ${nextFive[3]}</h5>
                 <img src="https://openweathermap.org/img/w/${data.list[26].weather[0].icon}.png" alt="Weather Icon">
                 <b>Temperature:</b> ${data.list[26].main.temp}°F
                 </br>
@@ -104,6 +114,7 @@ function getApiForecast(e) {
             `
             fiveDay.innerHTML = `
             <div>
+                <h5> ${nextFive[4]}</h5>
                 <img src="https://openweathermap.org/img/w/${data.list[34].weather[0].icon}.png" alt="Weather Icon">
                 <b>Temperature:</b> ${data.list[34].main.temp}°F
                 </br>
@@ -137,9 +148,11 @@ function loadHistory() {
     }
 }
 
+// When the website loads the history will display
 window.onload = function() {
     loadHistory();
 };
 
+// Listens for when the submit button is clicked, gets APIs for the current weather and the five day forecast
 searchBtn.addEventListener('click', getApi);
 searchBtn.addEventListener('click', getApiForecast);

@@ -39,6 +39,12 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px;
 }
 
+.weather-info h5,
+.weather-info p {
+    display: inline;
+    margin: 5px;
+}
+
 .row {
     justify-content: space-evenly;
 }
