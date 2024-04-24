@@ -18,5 +18,4 @@ Once you've either clicked the link or cloned the repository and launched the in
 
 Attached are screenshots of what the website should look like when visiting.
 
-![Alt text](./assets/images/HoriseonTop.png?raw=true "Top of webpage")
-![Alt text](./assets/images/HoriseionBottom.png?raw=true "Bottom of webpage")
+![Alt text](./assets/images/webpage.png?raw=true "Webpage")
