@@ -16,6 +16,6 @@ There are no installation steps required for this project. Simply click the link
 
 Once you've either clicked the link or cloned the repository and launched the index.html file, use a mouse and scrollwheel or phone/tablet touch screen to scroll through the website. You'll see a search bar on the left hand side of your screen if you're on a desktop. Use the search bar to type in a city of your choice. After submitting your input, you will see the current weather displayed on the right hand side and underneath that you will see a five day forecast. If you wish to search another city, go back to the form and submit a new city. You'll see also on the left hand side underneath the search bar, a history of searched cities. Click on any of the previously searched cities to repopulate the current weather and the five day forecast.
 
-Attached are screenshots of what the website should look like when visiting.
+Attached is a screenshot of what the website should look like when visiting.
 
 ![Alt text](./assets/images/webpage.png?raw=true "Webpage")
