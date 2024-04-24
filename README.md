@@ -10,7 +10,7 @@ The weather web application's intended purpose is for users to be able to search
 
 ## Installation
 
-There are no installation steps required for this project. Simply click the link provided: XXXXXX or you can clone the repository titled Weather-Dashboard-LaPierre and launch the index.html file in your default browser.
+There are no installation steps required for this project. Simply click the link provided: https://aslapi.github.io/Weather-Dashboard-LaPierre/ or you can clone the repository titled Weather-Dashboard-LaPierre and launch the index.html file in your default browser.
 
 ## Usage
 
